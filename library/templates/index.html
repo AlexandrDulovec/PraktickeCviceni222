@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knihovna</title>
+</head>
+<body>
+    <div style="display: flex;">
+        <div style="flex: 1;">
+            <h1>hlavní stránka</h1>
+            <a href="/add_book">Přidat knihu</a><br>
+            <a href="/add_user">Přidat uživatele</a>
+        </div>
+        <div style="flex: 1;">
+            <h1 style="text-align: center;">Přidej knihu</h1>
+            <form method="POST" action="/add_book" style="text-align: center;">
+                <label for="book_title">Název knihy:</label><br>
+                <input type="text" id="book_title" name="title"><br>
+                <label for="book_author">Autor knihy:</label><br>
+                <input type="text" id="book_author" name="author"><br><br>
+                <input type="submit" value="Přidat knihu">
+            </form>
+        </div>
+        <div style="flex: 1;">
+            <h1 style="text-align: right;">Přidej uživatele</h1>
+            <form method="POST" action="/add_user" style="text-align: right;">
+                <label for="user_name">Uživatelské jméno:</label><br>
+                <input type="text" id="user_name" name="username"><br>
+                <label for="user_email">Email:</label><br>
+                <input type="email" id="user_email" name="email"><br><br>
+                <input type="submit" value="Přidat uživatele">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
