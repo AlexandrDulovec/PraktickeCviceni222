@@ -6,15 +6,15 @@
     <title>Knihovna</title>
 </head>
 <body>
-    <div style="display: flex;">
-        <div style="flex: 1;">
-            <h1>hlavní stránka</h1>
+    <h1>KNIHOVNA</h1>
+    <div class="flex-container">
+        <div class="flex-item">
             <a href="/add_book">Přidat knihu</a><br>
             <a href="/add_user">Přidat uživatele</a>
         </div>
-        <div style="flex: 1;">
+        <div class="flex-item">
             <h1 style="text-align: center;">Přidej knihu</h1>
-            <form method="POST" action="/add_book" style="text-align: center;">
+            <form method="POST" action="/add_book" class="book-form">
                 <label for="book_title">Název knihy:</label><br>
                 <input type="text" id="book_title" name="title"><br>
                 <label for="book_author">Autor knihy:</label><br>
@@ -22,9 +22,9 @@
                 <input type="submit" value="Přidat knihu">
             </form>
         </div>
-        <div style="flex: 1;">
+        <div class="flex-item">
             <h1 style="text-align: right;">Přidej uživatele</h1>
-            <form method="POST" action="/add_user" style="text-align: right;">
+            <form method="POST" action="/add_user" class="user-form">
                 <label for="user_name">Uživatelské jméno:</label><br>
                 <input type="text" id="user_name" name="username"><br>
                 <label for="user_email">Email:</label><br>
@@ -34,4 +34,76 @@
         </div>
     </div>
 </body>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to right, #ff6b6b, #556270); 
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    flex: 1;
+    margin: 0 10px;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .flex-item {
+        margin: 10px 0;
+    }
+
+    form {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+</style>
 </html>
